@@ -76,7 +76,7 @@ export default function Textform(props) {
     <>
       <div style={{color: props.mode === "light" ? "black" : "white"}}>
         <div className="container">
-          <h1>{props.heading}</h1>
+          <h1 className="mb-4">{props.heading}</h1>
           <div className="mb-3 ">
             <textarea
               className="form-control"
@@ -85,40 +85,40 @@ export default function Textform(props) {
               id="myBox"
               rows={8}
               style={{
-                backgroundColor: props.mode === "light" ? "white" : "#31373d",
+                backgroundColor: props.boxColor,
                 color: props.mode === "light" ? "black" : "white",
               }}
             ></textarea>
           </div>
 
-          <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+          <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>
             Convert to Uppercase
           </button>
 
-          <button className="btn btn-primary mx-2" onClick={handleLoClick}>
+          <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>
             Convert to Lowercase
           </button>
 
-          <button className="btn btn-primary mx-2" onClick={handleSenClick}>
+          <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleSenClick}>
             Capitalize Sentences
           </button>
-          <button className="btn btn-primary mx-2" onClick={handleWorClick}>
+          <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleWorClick}>
             Capitalize Words
           </button>
 
-          <button className="btn btn-primary mx-2" onClick={handleResClick}>
+          <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleResClick}>
             Remove Extra Space
           </button>
 
-          <button className="btn btn-primary mx-2" onClick={handleSpkClick}>
+          <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleSpkClick}>
             Read me
           </button>
 
-          <button className="btn btn-primary mx-2" onClick={handleCopyClick}>
+          <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopyClick}>
             Copy Text
           </button>
 
-          <button className="btn btn-primary mx-2" onClick={handleClearClick}>
+          <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleClearClick}>
             Clear Text
           </button>
         </div>
@@ -130,9 +130,9 @@ export default function Textform(props) {
           <p>
             {text.trim() === "" ? 0 : text.trim().split(/\s+/).length} words and {text.length} characters
           </p>
-          <p>{0.008 * text.trim() === "" ? 0 : text.trim().split(/\s+/).length} Minutes read</p>
+          <p>{text.trim() === "" ? 0 : (0.008 * text.trim().split(/\s+/).length)} Minutes read</p>
           <h2>Preview</h2>
-          <p>{text==='' ? "Enter something in the above textbox to preview it here " : text}</p>
+          <p>{text==='' ? "Nothing to preview " : text}</p>
         </div>
       </div>
     </>

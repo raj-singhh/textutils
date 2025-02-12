@@ -1,29 +1,30 @@
 import {  useState } from "react";
 import "./App.css";
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Textform from "./components/Textform";
 import Alert from "./components/Alert";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode , setMode] = useState('light') //Whether dark mode is enabled or not
 
   const [alert , setAlert] = useState(null)
-  
+  const [boxColor , setBoxColor] =useState('white');
 
 
 
   const toggleMode = ()=>{
     if(mode === 'dark'){
       setMode('light');
+      setBoxColor('white');
       document.body.style.backgroundColor = 'white';
       document.getElementById('navbar').style.backgroundColor = '#f2f2f2';
       showAlert("Light mode enabled" , "success");
     }
     else{
       setMode('dark');
-
+      setBoxColor('rgb(36 ,74, 104)');
       document.body.style.backgroundColor = '#042743';
       document.getElementById('navbar').style.backgroundColor = 'black';
       
@@ -76,10 +77,12 @@ function App() {
     const changeColor=(color)=>{
         if(mode === 'dark'){
           if(color === 'default'){
+            setBoxColor('black');
             document.body.style.backgroundColor = '#042743';
             document.getElementById('navbar').style.backgroundColor = 'black';
             return
           }
+          setBoxColor(color);
           document.body.style.backgroundColor = getLighterColor(color);
           document.getElementById('navbar').style.backgroundColor = color;
         }
@@ -101,19 +104,19 @@ function App() {
 
   return (
     <>
-    {/* <Router> */}
+    <Router>
       <Navbar title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode} changeColor={changeColor} />
       <Alert alert={alert} />
       <div className="container my-3">
-        {/* <Routes> */}
+        <Routes>
           {/* Home Route */}
-          {/* <Route exact path="/" element={<Textform heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />} /> */}
-          <Textform heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />
+          <Route exact path="/" element={<Textform heading="Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert={showAlert} boxColor={boxColor}/>} />
+          {/* <Textform heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} boxColor={boxColor}/> */}
           {/* About Route */}
-          {/* <Route exact path="/about" element={<About />} /> */}
-        {/* </Routes> */}
+          <Route exact path="/about" element={<About mode={mode}/>} />
+        </Routes>
       </div>
-    {/* </Router> */}
+    </Router>
     </>
   );
 }

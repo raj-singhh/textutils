@@ -3,7 +3,7 @@
 import PropTypes from "prop-types";
 
 
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
  
@@ -15,12 +15,12 @@ export default function Navbar(props) {
 
     >
       <div className={`container-fluid navbar-${props.mode=== 'light' ? 'light' : 'dark'}`} >
-        {/* <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/">
           {props.title}
-        </Link> */}
-        <a className="navbar-brand" href="/">
+        </Link>
+        {/* <a className="navbar-brand" href="#">
           {props.title}
-        </a>
+        </a> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -35,23 +35,23 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              {/* <Link className="nav-link active" aria-current="page" to="/">
+              <Link className="nav-link active" aria-current="page" to="/">
                 Home
-              </Link> */}
-              <a className="nav-link active" aria-current="page" href="/">
+              </Link>
+              {/* <a className="nav-link active" aria-current="page" href="#">
                 Home
-              </a>
+              </a> */}
             </li>
             <li className="nav-item">
-              {/* <Link className="nav-link" to="/about">
+              <Link className="nav-link" to="/about">
                 {props.aboutText}
-              </Link> */}
-              <a className="nav-link" href="/about">
+              </Link>
+              {/* <a className="nav-link" href="#">
                 {props.aboutText}
-              </a>
+              </a> */}
             </li>
           </ul>
-          <form className="d-flex" role="search">
+          {/* <form className="d-flex" role="search">
             <input
               className="form-control me-2"
               type="search"
@@ -60,8 +60,8 @@ export default function Navbar(props) {
             />
             <button className="btn btn-outline-success" type="submit">
               Search
-            </button>
-          </form>
+            </button> 
+          </form>*/}
   {/*<-- dark mode button --> */}
           <div className={` form-check form-switch mx-3 text-${props.mode=== 'light' ? 'dark' : 'light cursor'}`}>
             <input
@@ -90,7 +90,7 @@ export default function Navbar(props) {
                 <li><button className="dropdown-item" type="button" onClick={()=>props.changeColor('#ff1a75')}>Pink</button></li>
                 <li><button className="dropdown-item" type="button" onClick={()=>props.changeColor('#f2b202')}>Yellow</button></li>
                 <li><button className="dropdown-item" type="button" onClick={()=>props.changeColor('#ff6600')}>Orange</button></li>
-                <li><hr class="dropdown-divider"/></li>
+                <li><hr className="dropdown-divider"/></li>
                 <li><button className="dropdown-item" type="button" onClick={()=>props.changeColor('default')}>Default</button></li>
               </ul>
             </div> 
