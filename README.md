@@ -56,7 +56,7 @@ To deploy the application on **Vercel** or **Netlify**, follow these steps:
 2. Link your repository with Vercel/Netlify.
 3. Deploy and get a live URL.
 
-🌐 **Live Demo:** [TextUtils](https://raj-singhh.github.io/textutils/) *(Add your live demo link here)*
+🌐 **Live Demo:** [TextUtils](https://raj-singhh.github.io/textutils/)
 
 ---
 
