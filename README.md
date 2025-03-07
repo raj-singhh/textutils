@@ -5,7 +5,6 @@
 Welcome to **TextUtils**, a simple yet powerful text manipulation web application built with **React.js**. This tool helps you format, analyze, and optimize text effortlessly.
 
 ---
-
 ## ✨ Features
 
 ✅ **Text Transformations** - Convert text to uppercase, lowercase, and capitalize words.  
