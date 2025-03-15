@@ -1,6 +1,6 @@
 # 📝 TextUtils - A Powerful Text Manipulation Tool
 
-## 🚀  Introduction
+## 🚀 Introduction
 
 Welcome to **TextUtils**, a simple yet powerful text manipulation web application built with **React.js**. This tool helps you format, analyze, and optimize text effortlessly.
 
