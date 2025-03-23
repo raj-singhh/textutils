@@ -78,7 +78,7 @@ export default function Textform(props) {
         <div className="container">
           <h1 className="mb-4">{props.heading}</h1>
           <div className="mb-3 ">
-            <textarea
+            <textarea 
               className="form-control"
               value={text}
               onChange={handleOnChange}
@@ -88,6 +88,7 @@ export default function Textform(props) {
                 backgroundColor: props.boxColor,
                 color: props.mode === "light" ? "black" : "white",
               }}
+              placeholder="Enter text here..."
             ></textarea>
           </div>
 
